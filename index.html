@@ -1,0 +1,1373 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>PARIS &amp; LONDON 旅のしおり | 2027 GW</title>
+  <style>
+    :root {
+      --bg: #faf8f5;
+      --surface: #ffffff;
+      --surface-sub: #f5f2ec;
+      --text: #1f242b;
+      --text-muted: #5b6470;
+      --border: #e5e0d8;
+      --shadow: 0 3px 14px rgba(31, 36, 43, 0.05);
+      --radius: 14px;
+
+      /* Muted Heritage Country Palettes */
+      --jp-main: #8c3b3b;
+      --jp-sub: #2c3036;
+
+      --sg-main: #2d6360;
+      --sg-sub: #8f7247;
+
+      --fr-blue: #334e68;
+      --fr-red: #944348;
+
+      --uk-navy: #223348;
+      --uk-red: #7e2e36;
+
+      /* Active Theme (Dynamic) */
+      --theme-main: var(--jp-main);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.68;
+      padding-bottom: 72px;
+    }
+
+    /* Refined Editorial Header */
+    .hero {
+      background: linear-gradient(135deg, #27394d 0%, #334e68 52%, #223348 100%);
+      color: #faf8f5;
+      padding: 24px 18px 22px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .hero-inner {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .hero-top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(250, 248, 245, 0.12);
+      border: 1px solid rgba(250, 248, 245, 0.22);
+      padding: 3px 11px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.07em;
+      color: #f1ede6;
+    }
+
+    /* JP | EN Language Toggle (Top-Right) */
+    .lang-switch {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(15, 23, 34, 0.42);
+      border: 1px solid rgba(250, 248, 245, 0.28);
+      border-radius: 999px;
+      padding: 2px;
+      flex-shrink: 0;
+    }
+
+    .lang-divider {
+      color: rgba(250, 248, 245, 0.35);
+      font-size: 0.72rem;
+      user-select: none;
+      padding: 0 1px;
+    }
+
+    .lang-btn {
+      border: none;
+      background: transparent;
+      color: rgba(250, 248, 245, 0.78);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      letter-spacing: 0.04em;
+    }
+
+    .lang-btn.active {
+      background: #faf8f5;
+      color: #1f242b;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
+    }
+
+    .hero h1 {
+      font-size: clamp(1.38rem, 4.2vw, 1.88rem);
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      line-height: 1.35;
+    }
+
+    .hero-sub {
+      font-size: 0.9rem;
+      color: rgba(250, 248, 245, 0.84);
+      margin-top: 6px;
+    }
+
+    /* Subtle Heritage Accent Line */
+    .heritage-bar {
+      height: 3px;
+      display: flex;
+      opacity: 0.9;
+    }
+    .heritage-bar span:nth-child(1) { flex: 1; background: #334e68; }
+    .heritage-bar span:nth-child(2) { flex: 1; background: #edeae4; }
+    .heritage-bar span:nth-child(3) { flex: 1; background: #944348; }
+    .heritage-bar span:nth-child(4) { flex: 1; background: #223348; }
+    .heritage-bar span:nth-child(5) { flex: 1; background: #7e2e36; }
+
+    /* Sticky Quick Jump Navigation */
+    .sticky-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(250, 248, 245, 0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1.5px solid var(--theme-main);
+      box-shadow: 0 2px 10px rgba(31, 36, 43, 0.05);
+      transition: border-color 0.3s ease;
+    }
+
+    .nav-status-row {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 6px 16px 2px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: var(--theme-main);
+      letter-spacing: 0.02em;
+    }
+
+    .sticky-lang-mini {
+      display: inline-flex;
+      align-items: center;
+      background: #ece7df;
+      border-radius: 999px;
+      padding: 1px;
+    }
+
+    .sticky-lang-mini span {
+      color: #b5afa6;
+      font-size: 0.68rem;
+      user-select: none;
+    }
+
+    .sticky-lang-mini button {
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 999px;
+      cursor: pointer;
+      letter-spacing: 0.03em;
+    }
+
+    .sticky-lang-mini button.active {
+      background: var(--theme-main);
+      color: #fff;
+    }
+
+    .nav-scroll {
+      max-width: 780px;
+      margin: 0 auto;
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      padding: 6px 14px 10px;
+      scrollbar-width: none;
+    }
+    .nav-scroll::-webkit-scrollbar {
+      display: none;
+    }
+
+    .nav-pill {
+      flex: 0 0 auto;
+      text-decoration: none;
+      color: var(--text-muted);
+      background: #efeae2;
+      border: 1px solid #e3ddd3;
+      border-radius: 999px;
+      padding: 5px 12px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+    }
+
+    .nav-pill small {
+      font-weight: 500;
+      opacity: 0.85;
+      margin-left: 3px;
+    }
+
+    .nav-pill.active {
+      background: var(--theme-main);
+      border-color: var(--theme-main);
+      color: #faf8f5;
+      box-shadow: 0 2px 6px rgba(31, 36, 43, 0.14);
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 18px 14px;
+    }
+
+    .scroll-target {
+      scroll-margin-top: 86px;
+    }
+
+    /* Section Header */
+    .section-title {
+      font-size: 1.02rem;
+      font-weight: 700;
+      margin: 22px 0 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text);
+      letter-spacing: 0.02em;
+    }
+
+    /* Base Cards (Hotels) */
+    .base-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    @media (min-width: 640px) {
+      .base-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .base-card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 16px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--fr-blue);
+    }
+
+    .base-card.uk {
+      border-top-color: var(--uk-navy);
+    }
+
+    .base-tag {
+      display: inline-block;
+      font-size: 0.74rem;
+      font-weight: 700;
+      padding: 2px 10px;
+      border-radius: 6px;
+      margin-bottom: 6px;
+    }
+
+    .base-card.fr .base-tag {
+      background: #edf2f7;
+      color: var(--fr-blue);
+    }
+
+    .base-card.uk .base-tag {
+      background: #f5ecee;
+      color: var(--uk-red);
+    }
+
+    .base-card h3 {
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+
+    .base-address {
+      font-size: 0.86rem;
+      color: var(--text);
+      background: var(--surface-sub);
+      padding: 8px 10px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      margin: 8px 0 10px;
+      word-break: break-word;
+    }
+
+    .base-meta {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    /* Action Buttons */
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 8px;
+      text-decoration: none;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      cursor: pointer;
+      transition: background 0.15s ease, transform 0.1s ease;
+    }
+
+    .btn:active {
+      transform: scale(0.98);
+    }
+
+    .btn-map {
+      background: #f0f4f8;
+      color: #2b4c6f;
+      border-color: #d4dfeb;
+    }
+
+    .btn-copy {
+      background: var(--surface-sub);
+      color: #3f4752;
+    }
+
+    /* Day Card */
+    .day-card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin-bottom: 18px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .day-header {
+      padding: 13px 18px;
+      color: #faf8f5;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    /* Calm Heritage Header Gradients */
+    .theme-jp .day-header {
+      background: linear-gradient(135deg, #2c3036 0%, #7c3636 100%);
+    }
+    .theme-sg .day-header {
+      background: linear-gradient(135deg, #285653 0%, #836942 100%);
+    }
+    .theme-fr .day-header {
+      background: linear-gradient(135deg, #2c435a 0%, #3d5a78 74%, #873e43 100%);
+    }
+    .theme-mix .day-header {
+      background: linear-gradient(135deg, #334e68 0%, #873e43 49%, #223348 51%, #762d35 100%);
+    }
+    .theme-uk .day-header {
+      background: linear-gradient(135deg, #1f2e40 0%, #2c4159 74%, #762d35 100%);
+    }
+
+    .day-label {
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    .day-date {
+      font-size: 0.86rem;
+      font-weight: 500;
+      opacity: 0.92;
+      margin-left: 6px;
+    }
+
+    .day-area {
+      font-size: 0.76rem;
+      font-weight: 600;
+      background: rgba(250, 248, 245, 0.16);
+      border: 1px solid rgba(250, 248, 245, 0.2);
+      padding: 3px 10px;
+      border-radius: 999px;
+    }
+
+    .day-body {
+      padding: 16px 18px;
+    }
+
+    /* Timeline */
+    .timeline {
+      list-style: none;
+      position: relative;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 22px;
+      padding-bottom: 16px;
+      border-left: 1.5px solid #d8d2c7;
+      margin-left: 6px;
+    }
+
+    .timeline-item:last-child {
+      border-left-color: transparent;
+      padding-bottom: 2px;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -6px;
+      top: 6px;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: #64748b;
+      border: 2px solid #fff;
+      box-shadow: 0 0 0 1.5px #d8d2c7;
+    }
+
+    .theme-jp .timeline-dot { background: var(--jp-main); box-shadow: 0 0 0 2px #ebd5d5; }
+    .theme-sg .timeline-dot { background: var(--sg-main); box-shadow: 0 0 0 2px #d1e3e1; }
+    .theme-fr .timeline-dot { background: var(--fr-blue); box-shadow: 0 0 0 2px #d4dfeb; }
+    .theme-mix .timeline-dot { background: var(--fr-red); box-shadow: 0 0 0 2px #ebd6d8; }
+    .theme-uk .timeline-dot { background: var(--uk-navy); box-shadow: 0 0 0 2px #d2dae3; }
+
+    .time-badge {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text);
+      background: var(--surface-sub);
+      border: 1px solid var(--border);
+      padding: 1px 8px;
+      border-radius: 6px;
+      margin-bottom: 4px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .event-title {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .event-desc {
+      font-size: 0.87rem;
+      color: var(--text-muted);
+      margin-top: 3px;
+    }
+
+    /* Boarding / Train Ticket Box */
+    .ticket-box {
+      background: var(--surface-sub);
+      border: 1px solid #d9d3c7;
+      border-radius: 10px;
+      padding: 11px 14px;
+      margin: 8px 0 4px;
+    }
+
+    .ticket-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 6px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: #46505c;
+      margin-bottom: 6px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 4px;
+    }
+
+    .ticket-route {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .ticket-route .arrow {
+      color: #7c8591;
+      font-size: 0.82rem;
+    }
+
+    .ticket-sub {
+      font-size: 0.79rem;
+      color: var(--text-muted);
+      margin-top: 5px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    /* Note Callout */
+    .note-box {
+      margin-top: 12px;
+      background: #f9f5eb;
+      border-left: 3.5px solid #b5894c;
+      padding: 10px 12px;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.83rem;
+      color: #5c492e;
+    }
+
+    .note-box strong {
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    /* Info Accordion */
+    details.info-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px 16px;
+      margin-bottom: 10px;
+      box-shadow: var(--shadow);
+    }
+
+    details.info-card summary {
+      font-weight: 700;
+      font-size: 0.93rem;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    details.info-card summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details.info-card summary::after {
+      content: "＋";
+      font-size: 1.05rem;
+      color: var(--text-muted);
+    }
+
+    details.info-card[open] summary::after {
+      content: "−";
+    }
+
+    .info-content {
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+      font-size: 0.86rem;
+      color: var(--text-muted);
+    }
+
+    .info-content ul {
+      padding-left: 18px;
+    }
+
+    .info-content li {
+      margin-bottom: 5px;
+    }
+
+    /* Floating Top Button */
+    .fab-top {
+      position: fixed;
+      right: 16px;
+      bottom: 18px;
+      z-index: 90;
+      background: var(--theme-main);
+      color: #faf8f5;
+      border: none;
+      border-radius: 999px;
+      padding: 9px 14px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      box-shadow: 0 4px 12px rgba(31, 36, 43, 0.22);
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    /* Toast */
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 24px;
+      transform: translateX(-50%) translateY(20px);
+      background: #223348;
+      color: #faf8f5;
+      padding: 9px 18px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.25s ease;
+      z-index: 200;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="hero" id="top">
+    <div class="hero-inner">
+      <div class="hero-top-row">
+        <span class="hero-badge" data-ja="2027.04.28 – 05.08 | 家族旅行しおり" data-en="2027.04.28 – 05.08 | FAMILY ITINERARY">2027.04.28 – 05.08 | 家族旅行しおり</span>
+        <div class="lang-switch" role="group" aria-label="Language Switch">
+          <button type="button" class="lang-btn active" data-set-lang="ja" onclick="setLang('ja')">JP</button>
+          <span class="lang-divider" aria-hidden="true">|</span>
+          <button type="button" class="lang-btn" data-set-lang="en" onclick="setLang('en')">EN</button>
+        </div>
+      </div>
+      <h1 data-ja="🇫🇷 パリ ＆ 🇬🇧 ロンドン 旅のしおり" data-en="🇫🇷 PARIS &amp; 🇬🇧 LONDON Travel Guide">🇫🇷 パリ ＆ 🇬🇧 ロンドン 旅のしおり</h1>
+      <p class="hero-sub" data-ja="シンガポール経由 11日間のスケジュール・宿泊先・移動マップ" data-en="11-Day Schedule, Accommodations &amp; Transit Maps via Singapore">シンガポール経由 11日間のスケジュール・宿泊先・移動マップ</p>
+    </div>
+  </header>
+  <div class="heritage-bar" aria-hidden="true">
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
+
+  <!-- Sticky Day Navigation -->
+  <nav class="sticky-nav" aria-label="日程クイック移動">
+    <div class="nav-status-row">
+      <span id="current-country-label">🇯🇵 JAPAN / 旅の拠点</span>
+      <div class="sticky-lang-mini" role="group" aria-label="Quick Language Switch">
+        <button type="button" class="active" data-set-lang="ja" onclick="setLang('ja')">JP</button>
+        <span aria-hidden="true">|</span>
+        <button type="button" data-set-lang="en" onclick="setLang('en')">EN</button>
+      </div>
+    </div>
+    <div class="nav-scroll" id="nav-scroll">
+      <a class="nav-pill active" href="#bases" data-target="bases" data-theme="jp"><span data-ja="🏨 宿・拠点" data-en="🏨 Stays">🏨 宿・拠点</span></a>
+      <a class="nav-pill" href="#day0" data-target="day0" data-theme="jp">Day 0<small>4/28</small></a>
+      <a class="nav-pill" href="#day1" data-target="day1" data-theme="sg">Day 1<small>4/29</small></a>
+      <a class="nav-pill" href="#day2" data-target="day2" data-theme="fr">Day 2<small>4/30</small></a>
+      <a class="nav-pill" href="#day3" data-target="day3" data-theme="fr">Day 3<small>5/1</small></a>
+      <a class="nav-pill" href="#day4" data-target="day4" data-theme="fr">Day 4<small>5/2</small></a>
+      <a class="nav-pill" href="#day5" data-target="day5" data-theme="mix">Day 5<small>5/3</small></a>
+      <a class="nav-pill" href="#day6" data-target="day6" data-theme="uk">Day 6<small>5/4</small></a>
+      <a class="nav-pill" href="#day7" data-target="day7" data-theme="uk">Day 7<small>5/5</small></a>
+      <a class="nav-pill" href="#day8" data-target="day8" data-theme="uk">Day 8<small>5/6</small></a>
+      <a class="nav-pill" href="#day9" data-target="day9" data-theme="uk">Day 9<small>5/7</small></a>
+      <a class="nav-pill" href="#day10" data-target="day10" data-theme="jp">Day 10<small>5/8</small></a>
+      <a class="nav-pill" href="#tips" data-target="tips" data-theme="uk"><span data-ja="💡 メモ" data-en="💡 Tips">💡 メモ</span></a>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <!-- Accommodations -->
+    <section id="bases" class="scroll-target" data-theme="jp">
+      <h2 class="section-title" data-ja="🏨 滞在拠点（ホテル・宿の住所）" data-en="🏨 Accommodations &amp; Base Addresses">🏨 滞在拠点（ホテル・宿の住所）</h2>
+      <div class="base-grid">
+        <!-- Paris -->
+        <article class="base-card fr">
+          <span class="base-tag" data-ja="🇫🇷 パリ滞在（4/30 – 5/3・3泊）" data-en="🇫🇷 Paris Stay (Apr 30 – May 3 · 3 Nights)">🇫🇷 パリ滞在（4/30 – 5/3・3泊）</span>
+          <h3 data-ja="パリの宿（パリ15区）" data-en="Paris Residence (15th Arr.)">パリの宿（パリ15区）</h3>
+          <div class="base-address">4 Rue Jean Daudin, 75015 Paris, France</div>
+          <p class="base-meta" data-ja="最寄エリア：モンパルナス / セーヴル＝ルクールブ周辺" data-en="Area: Montparnasse / Sèvres-Lecourbe">最寄エリア：モンパルナス / セーヴル＝ルクールブ周辺</p>
+          <div class="btn-row">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=4+Rue+Jean+Daudin,+75015+Paris,+France" target="_blank" rel="noopener">📍 Google Map</a>
+            <button class="btn btn-copy" type="button" onclick="copyText('4 Rue Jean Daudin, 75015 Paris, France')" data-ja="📋 住所コピー" data-en="📋 Copy Address">📋 住所コピー</button>
+          </div>
+        </article>
+
+        <!-- London -->
+        <article class="base-card uk">
+          <span class="base-tag" data-ja="🇬🇧 ロンドン滞在（5/3 – 5/7・4泊）" data-en="🇬🇧 London Stay (May 3 – May 7 · 4 Nights)">🇬🇧 ロンドン滞在（5/3 – 5/7・4泊）</span>
+          <h3 data-ja="ロンドンの宿（キングス・クロス）" data-en="London Residence (King's Cross)">ロンドンの宿（キングス・クロス）</h3>
+          <div class="base-address">Caledonian Rd, London N1 0SL, UK</div>
+          <p class="base-meta" data-ja="チェックイン 15:00〜 / チェックアウト 〜11:00（セント・パンクラス駅徒歩圏）" data-en="Check-in 15:00 / Check-out 11:00 (Walkable from St Pancras)">チェックイン 15:00〜 / チェックアウト 〜11:00（セント・パンクラス駅徒歩圏）</p>
+          <div class="btn-row">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=51.5355382,-0.116867" target="_blank" rel="noopener">📍 Google Map</a>
+            <button class="btn btn-copy" type="button" onclick="copyText('Caledonian Rd, London N1 0SL, UK')" data-ja="📋 住所コピー" data-en="📋 Copy Address">📋 住所コピー</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <h2 class="section-title" data-ja="🗓️ 日程表（Day 0 〜 Day 10）" data-en="🗓️ Daily Schedule (Day 0 – Day 10)">🗓️ 日程表（Day 0 〜 Day 10）</h2>
+
+    <!-- DAY 0 -->
+    <section id="day0" class="day-card theme-jp scroll-target" data-theme="jp">
+      <div class="day-header">
+        <div><span class="day-label">Day 0</span><span class="day-date" data-ja="4月28日(水)" data-en="Wed, Apr 28">4月28日(水)</span></div>
+        <span class="day-area" data-ja="🇯🇵 東京 → 名古屋（前日移動）" data-en="🇯🇵 Tokyo → Nagoya (Pre-departure)">🇯🇵 東京 → 名古屋（前日移動）</span>
+      </div>
+      <div class="day-body">
+        <ul class="timeline">
+          <li class="timeline-item">
+            <span class="timeline-dot"></span>
+            <span class="time-badge" data-ja="午後〜夜" data-en="Afternoon – Evening">午後〜夜</span>
+            <div class="event-title">
+              <span data-ja="東京組は新幹線で名古屋へ前日移動" data-en="Shinkansen from Tokyo to Nagoya">東京組は新幹線で名古屋へ前日移動</span>
+              <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Nagoya+Station" target="_blank" rel="noopener" data-ja="📍 名古屋駅" data-en="📍 Nagoya Sta.">📍 名古屋駅</a>
+            </div>
+            <p class="event-desc" data-ja="翌朝のセントレア出発に備えて名古屋で合流・前泊。" data-en="Meet in Nagoya and stay overnight ahead of the morning flight from Centrair.">翌朝のセントレア出発に備えて名古屋で合流・前泊。</p>
+          </li>
+          <li class="timeline-item">
+            <span class="timeline-dot"></span>
+            <span class="time-badge" data-ja="出発前夜" data-en="Night Before">出発前夜</span>
+            <div class="event-title" data-ja="持ち物・通信・書類の最終確認" data-en="Final Checklist (Documents &amp; Gear)">持ち物・通信・書類の最終確認</div>
+            <p class="event-desc" data-ja="パスポート、英国ETA登録確認、eSIM設定、変換プラグ（フランス：Cタイプ／イギリス：BFタイプ）、常備薬。" data-en="Passports, UK ETA approval, eSIM setup, power adapters (France: Type C / UK: Type G), and regular medications.">パスポート、英国ETA登録確認、eSIM設定、変換プラグ（フランス：Cタイプ／イギリス：BFタイプ）、常備薬。</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- DAY 1 -->
+    <section id="day1" class="day-card theme-sg scroll-target" data-theme="sg">
+      <div class="day-header">
+        <div><span class="day-label">Day 1</span><span class="day-date" data-ja="4月29日(木・祝)" data-en="Thu, Apr 29">4月29日(木・祝)</span></div>
+        <span class="day-area" data-ja="🇯🇵 名古屋 → 🇸🇬 シンガポール" data-en="🇯🇵 Nagoya → 🇸🇬 Singapore">🇯🇵 名古屋 → 🇸🇬 シンガポール</span>
+      </div>
+      <div class="day-body">
+        <ul class="timeline">
+          <li class="timeline-item">
+            <span class="timeline-dot"></span>
+            <span class="time-badge">07:00</span>
+            <div class="event-title">
+              <span data-ja="名古屋出発 → 中部国際空港（セントレア）へ" data-en="Depart Nagoya → Chubu Centrair Airport (NGO)">名古屋出発 → 中部国際空港（セントレア）へ</span>
+              <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Chubu+Centrair+International+Airport+Terminal+1" target="_blank" rel="noopener" data-ja="📍 セントレア T1" data-en="📍 Centrair T1">📍 セントレア T1</a>
+            </div>
+            <p class="event-desc" data-ja="出発2時間半前（08:00頃）までに第1ターミナルへ到着しチェックイン。" data-en="Arrive at Terminal 1 by 08:00 (2.5 hours prior to departure) for check-in.">出発2時間半前（08:00頃）までに第1ターミナルへ到着しチェックイン。</p>
+          </li>
+          <li class="timeline-item">
+            <span class="timeline-dot"></span>
+            <span class="time-badge" data-ja="10:25 発 → 16:00 着" data-en="Dep 10:25 → Arr 16:00">10:25 発 → 16:00 着</span>
+            <div class="ticket-box">
+              <div class="ticket-head">
+                <span>✈️ SINGAPORE AIRLINES | SQ 671</span>
+                <span data-ja="受託手荷物 25kgまで" data-en="Checked Baggage: 25 kg">受託手荷物 25kgまで</span>
+              </div>
+              <div class="ticket-route">
+                <span data-ja="名古屋 NGO (T1)" data-en="Nagoya NGO (T1)">名古屋 NGO (T1)</span>
+                <span class="arrow">──────▶</span>
+                <span data-ja="シンガポール SIN" data-en="Singapore SIN">シンガポール SIN</span>
+              </div>
+              <div class="ticket-sub">
+                <span data-ja="所要時間：約6時間35分" data-en="Duration: ~6h 35m">所要時間：約6時間35分</span>
+                <span data-ja="機内持ち込み：7kg（1個）まで" data-en="Carry-on: 1 bag up to 7 kg">機内持ち込み：7kg（1個）まで</span>
+              </div>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <span class="timeline-dot"></span>
+            <span class="time-badge">18:00 – 22:00</span>
+            <div class="event-title">
+              <span data-ja="シンガポール トランジット観光＆夕食" data-en="Singapore Transit Sightseeing &amp; Dinner">シンガポール トランジット観光＆夕食</span>
+              <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Marina+Bay+Sands+Singapore" target="_blank" rel="noopener" data-ja="📍 マリーナベイ" data-en="📍 Marina Bay">📍 マリーナベイ</a>
+            </div>
+            <p class="event-desc" data-ja="乗り継ぎ時間（8時間15分）を活用して市内へ。22:00までにチャンギ空港 第3ターミナルへ戻る。" data-en="Explore the city during the 8h 15m layover. Return to Changi Airport Terminal 3 by 22:00.">乗り継ぎ時間（8時間15分）を活用して市内へ。22:00までにチャンギ空港 第3ターミナルへ戻る。</p>
+          </li>
+        </ul>
+        <div class="note-box">
+          <strong data-ja="🚕 移動メモ（シンガポール）" data-en="🚕 Transit Tip (Singapore)">🚕 移動メモ（シンガポール）</strong>
+          <span data-ja="4人移動は配車アプリ「Grab」の利用が快適で割安です。帰りの空港は Terminal 3 発です。" data-en="Using the Grab ride-hailing app is convenient and economical for 4 passengers. Departing from Terminal 3.">4人移動は配車アプリ「Grab」の利用が快適で割安です。帰りの空港は Terminal 3 発です。</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- DAY 2 -->
+    <section id="day2" class="day-card theme-fr scroll-target" data-theme="fr">
+      <div class="day-header">
+        <div><span class="day-label">Day 2</span><span class="day-date" data-ja="4月30日(金)" data-en="Fri, Apr 30">4月30日(金)</span></div>
+        <span class="day-area" data-ja="🇸🇬 シンガポール → 🇫🇷 パリ" data-en="🇸🇬 Singapore → 🇫🇷 Paris">🇸🇬 シンガポール → 🇫🇷 パリ</span>
+      </div>
+      <div class="day-body">
+        <ul class="timeline">
+          <li class="timeline-item">
+            <span class="timeline-dot"></span>
+            <span class="time-badge" data-ja="00:15 発 → 07:45 着" data-en="Dep 00:15 → Arr 07:45">00:15 発 → 07:45 着</span>
+            <div class="ticket-box">
+              <div class="ticket-head">
+                <span>✈️ SINGAPORE AIRLINES | SQ 336</span>
+                <span data-ja="受託手荷物 25kgまで" data-en="Checked Baggage: 25 kg">受託手荷物 25kgまで</span>
+              </div>
+              <div class="ticket-route">
+                <span data-ja="シンガポール SIN (T3)" data-en="Singapore SIN (T3)">シンガポール SIN (T3)</span>
+                <span class="arrow">──────▶</span>
+                <span data-ja="パリ CDG (T1)" data-en="Paris CDG (T1)">パリ CDG (T1)</span>
+              </div>
+              <div class="ticket-sub">
+                <span data-ja="深夜発・朝パリ到着（機内泊）" data-en="Overnight flight arriving in Paris in the morning">深夜発・朝パリ到着（機内泊）</span>
+              </div>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <span class="timeline-dot"></span>
+            <span class="time-badge">09:30</span>
+            <div class="event-title">
+              <span data-ja="空港からパリ市内へ移動・宿に荷物預け" data-en="Transfer to Paris &amp; Drop Luggage at Stay">空港からパリ市内へ移動・宿に荷物預け</span>
+              <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=4+Rue+Jean+Daudin,+75015+Paris,+France" target="_blank" rel="noopener" data-ja="📍 パリの宿" data-en="📍 Paris Stay">📍 パリの宿</a>
+            </div>
+            <p class="event-desc" data-ja="スーツケース4個のためCDG空港からは公式タクシー乗り場からの移動が安心（左岸定額料金エリア）。" data-en="With 4 suitcases, taking an official taxi from the CDG taxi rank is recommended (Left Bank flat-rate zone).">スーツケース4個のためCDG空港からは公式タクシー乗り場からの移動が安心（左岸定額料金エリア）。</p>
+          </li>
+          <li class="timeline-item">
+            <span class="timeline-dot"></span>
+            <span class="time-badge">13:00</span>
+            <div class="event-title">
+              <span data-ja="ベルサイユ宮殿 観光" data-en="Palace of Versailles">ベルサイユ宮殿 観光</span>
+              <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Palace+of+Versailles" target="_blank" rel="noopener">📍 Map</a>
+            </div>
+            <p class="event-desc" data-ja="鏡の回廊・庭園などをじっくり見学（※時間指定チケット事前予約）。" data-en="Explore the Hall of Mirrors and the Gardens (advance timed-entry tickets required).">鏡の回廊・庭園などをじっくり見学（※時間指定チケット事前予約）。</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- DAY 3 -->
+    <section id="day3" class="day-card theme-fr scroll-target" data-theme="fr">
+      <div class="day-header">
+        <div><span class="day-label">Day 3</span><span class="day-date" data-ja="5月1日(土)" data-en="Sat, May 1">5月1日(土)</span></div>
+        <span class="day-area" data-ja="🇫🇷 パリ市内観光①" data-en="🇫🇷 Paris Sightseeing I">🇫🇷 パリ市内観光①</span>
+      </div>
+      <div class="day-body">
+        <ul class="timeline">
+          <li class="timeline-item">
+            <span class="timeline-dot"></span>
+            <span class="time-badge">08:00</span>
+            <div class="event-title">
+              <span data-ja="モンマルトルの丘（サクレ・クール寺院）" data-en="Montmartre &amp; Sacré-Cœur Basilica">モンマルトルの丘（サクレ・クール寺院）</span>
+              <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Sacre-Coeur+Montmartre+Paris" target="_blank" rel="noopener">📍 Map</a>
+            </div>
+            <p class="event-desc" data-ja="朝の澄んだ空気の中でパリ市街を一望。テルトル広場周辺を散策。" data-en="Panoramic morning views over Paris and a stroll around Place du Tertre.">朝の澄んだ空気の中でパリ市街を一望。テルトル広場周辺を散策。</p>
+          </li>
+          <li class="timeline-item">
+            <span class="timeline-dot"></span>
+            <span class="time-badge">12:00</span>
+            <div class="event-title">
+              <span data-ja="モンパルナス周辺ランチ・アトリエ散策" data-en="Montparnasse Lunch &amp; Walk">モンパルナス周辺ランチ・アトリエ散策</span>
+              <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Montparnasse+Paris" target="_blank" rel="noopener">📍 Map</a>
+            </div>
+            <p class="event-desc" data-ja="宿からも近いモンパルナスエリアでランチと街歩き。" data-en="Lunch and neighborhood walk near our Montparnasse base.">宿からも近いモンパルナスエリアでランチと街歩き。</p>
+          </li>
+          <li class="timeline-item">
+            <span class="timeline-dot"></span>
+            <span class="time-badge">15:00</span>
+            <div class="event-title">
+              <span data-ja="凱旋門・シャンゼリゼ通り・エッフェル塔・セーヌ川" data-en="Arc de Triomphe, Champs-Élysées, Eiffel Tower &amp; Seine">凱旋門・シャンゼリゼ通り・エッフェル塔・セーヌ川</span>
+              <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Eiffel+Tower+Paris" target="_blank" rel="noopener" data-ja="📍 エッフェル塔" data-en="📍 Eiffel Tower">📍 エッフェル塔</a>
+              <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Arc+de+Triomphe+Paris" target="_blank" rel="noopener" data-ja="📍 凱旋門" data-en="📍 Arc de Triomphe">📍 凱旋門</a>
+            </div>
+            <p class="event-desc" data-ja="パリの象徴エリアを巡り、夕暮れのセーヌ川沿いを散策。" data-en="Visit iconic Paris landmarks and enjoy an evening walk along the Seine.">パリの象徴エリアを巡り、夕暮れのセーヌ川沿いを散策。</p>
+          </li>
+        </ul>
+        <div class="note-box">
+          <strong data-ja="⚠️ 5月1日（メーデー）の注意" data-en="⚠️ May 1 (Labour Day) Notice">⚠️ 5月1日（メーデー）の注意</strong>
+          <span data-ja="フランスは祝日のため、百貨店・一部美術館・個人商店が休業し、メトロの一部駅が閉鎖される場合があります。" data-en="Due to the national holiday in France, department stores, some museums, and certain Metro stations may be closed.">フランスは祝日のため、百貨店・一部美術館・個人商店が休業し、メトロの一部駅が閉鎖される場合があります。</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- DAY 4 -->
+    <section id="day4" class="day-card theme-fr scroll-target" data-theme="fr">
+      <div class="day-header">
+        <div><span class="day-label">Day 4</span><span class="day-date" data-ja="5月2日(日)" data-en="Sun, May 2">5月2日(日)</span></div>
+        <span class="day-area" data-ja="🇫🇷 モン・サン・ミシェル" data-en="🇫🇷 Mont-Saint-Michel">🇫🇷 モン・サン・ミシェル</span>
+      </div>
+      <div class="day-body">
+        <ul class="timeline">
+          <li class="timeline-item">
+            <span class="timeline-dot"></span>
+            <span class="time-badge">08:00</span>
+            <div class="event-title" data-ja="パリ市内集合・出発" data-en="Meet in Paris &amp; Depart">パリ市内集合・出発</div>
+            <p class="event-desc" data-ja="終日バスツアーにてノルマンディー地方へ（片道約4時間）。" data-en="Full-day coach excursion to Normandy (~4 hours each way).">終日バスツアーにてノルマンディー地方へ（片道約4時間）。</p>
+          </li>
+          <li class="timeline-item">
+            <span class="timeline-dot"></span>
+            <span class="time-badge" data-ja="日中" data-en="Daytime">日中</span>
+            <div class="event-title">
+              <span data-ja="世界遺産 モン・サン・ミシェル 観光" data-en="Mont-Saint-Michel Abbey &amp; Village">世界遺産 モン・サン・ミシェル 観光</span>
+              <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Mont+Saint-Michel+France" target="_blank" rel="noopener">📍 Map</a>
+            </div>
+            <p class="event-desc" data-ja="修道院見学、参道散策、名物オムレツやガレットなど。" data-en="Visit the Abbey, stroll the medieval lanes, and try local galettes or omelettes.">修道院見学、参道散策、名物オムレツやガレットなど。</p>
+          </li>
+          <li class="timeline-item">
+            <span class="timeline-dot"></span>
+            <span class="time-badge">19:00</span>
+            <div class="event-title" data-ja="パリ市内帰着" data-en="Return to Paris">パリ市内帰着</div>
+            <p class="event-desc" data-ja="翌日午後はユーロスターでロンドンへ移動するため、夜のうちにパッキング整理。" data-en="Pack bags tonight ahead of tomorrow afternoon's Eurostar to London.">翌日午後はユーロスターでロンドンへ移動するため、夜のうちにパッキング整理。</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- DAY 5 -->
+    <section id="day5" class="day-card theme-mix scroll-target" data-theme="mix">
+      <div class="day-header">
+        <div><span class="day-label">Day 5</span><span class="day-date" data-ja="5月3日(月・祝)" data-en="Mon, May 3">5月3日(月・祝)</span></div>
+        <span class="day-area" data-ja="🇫🇷 パリ → 🚄 → 🇬🇧 ロンドン" data-en="🇫🇷 Paris → 🚄 → 🇬🇧 London">🇫🇷 パリ → 🚄 → 🇬🇧 ロンドン</span>
+      </div>
+      <div class="day-body">
+        <ul class="timeline">
+          <li class="timeline-item">
+            <span class="timeline-dot"></span>
+            <span class="time-badge">09:00</span>
+            <div class="event-title">
+              <span data-ja="ルーブル美術館 ＆ ノートルダム大聖堂" data-en="Louvre Museum &amp; Notre-Dame Cathedral">ルーブル美術館 ＆ ノートルダム大聖堂</span>
+              <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Louvre+Museum+Paris" target="_blank" rel="noopener" data-ja="📍 ルーブル" data-en="📍 Louvre">📍 ルーブル</a>
+              <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Cathedrale+Notre-Dame+de+Paris" target="_blank" rel="noopener" data-ja="📍 ノートルダム" data-en="📍 Notre-Dame">📍 ノートルダム</a>
+            </div>
+            <p class="event-desc" data-ja="朝一番で美術館・大聖堂を見学。宿で荷物をピックアップしてパリ北駅へ。" data-en="Morning museum &amp; cathedral visit, then pick up luggage and head to Gare du Nord.">朝一番で美術館・大聖堂を見学。宿で荷物をピックアップしてパリ北駅へ。</p>
+          </li>
+          <li class="timeline-item">
+            <span class="timeline-dot"></span>
+            <span class="time-badge" data-ja="14:02 駅着推奨（14:32 ゲート閉鎖）" data-en="Arrive 14:02 (Gates close 14:32)">14:02 駅着推奨（14:32 ゲート閉鎖）</span>
+            <div class="event-title">
+              <span data-ja="パリ北駅（Gare du Nord）にて出国・入国審査" data-en="Border Control at Paris Gare du Nord">パリ北駅（Gare du Nord）にて出国・入国審査</span>
+              <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Paris+Gare+du+Nord" target="_blank" rel="noopener" data-ja="📍 パリ北駅" data-en="📍 Gare du Nord">📍 パリ北駅</a>
+            </div>
+            <p class="event-desc" data-ja="改札ゲートは発車30分前（14:32）に完全閉鎖。パスポートとチケットQRコードを各自手元に用意。" data-en="Ticket gates close strictly 30 mins before departure (14:32). Keep passports and QR codes ready.">改札ゲートは発車30分前（14:32）に完全閉鎖。パスポートとチケットQRコードを各自手元に用意。</p>
+          </li>
+          <li class="timeline-item">
+            <span class="timeline-dot"></span>
+            <span class="time-badge" data-ja="15:02 発 → 16:30 着（時差 -1時間）" data-en="Dep 15:02 → Arr 16:30 (-1h TZ)">15:02 発 → 16:30 着（時差 -1時間）</span>
+            <div class="ticket-box">
+              <div class="ticket-head">
+                <span>🚄 EUROSTAR 9039 | Eurostar Plus</span>
+                <span data-ja="14号車（Coach D）" data-en="Coach D (Car 14)">14号車（Coach D）</span>
+              </div>
+              <div class="ticket-route">
+                <span>Paris Gare du Nord</span>
+                <span class="arrow">──────▶</span>
+                <span>London St Pancras Int'l</span>
+              </div>
+              <div class="ticket-sub">
+                <span data-ja="荷物：大型2個（85cm以内）＋手荷物1個まで" data-en="Luggage: 2 bags (up to 85cm) + 1 hand bag">荷物：大型2個（85cm以内）＋手荷物1個まで</span>
+                <span data-ja="車内軽食サービス付き" data-en="At-seat light meal included">車内軽食サービス付き</span>
+              </div>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <span class="timeline-dot"></span>
+            <span class="time-badge">17:00 – 18:00</span>
+            <div class="event-title">
+              <span data-ja="9と3/4番線 ＆ ロンドンの宿 チェックイン" data-en="Platform 9¾ &amp; London Check-in">9と3/4番線 ＆ ロンドンの宿 チェックイン</span>
+              <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Platform+9+3/4+Kings+Cross+London" target="_blank" rel="noopener" data-ja="📍 9と3/4番線" data-en="📍 Platform 9¾">📍 9と3/4番線</a>
+              <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=51.5355382,-0.116867" target="_blank" rel="noopener" data-ja="📍 ロンドンの宿" data-en="📍 London Stay">📍 ロンドンの宿</a>
+            </div>
+            <p class="event-desc" data-ja="隣接するキングス・クロス駅で記念撮影後、徒歩圏内の宿（Caledonian Rd）へチェックイン。" data-en="Photo stop at neighboring King's Cross Station, then walk to our accommodation on Caledonian Rd.">隣接するキングス・クロス駅で記念撮影後、徒歩圏内の宿（Caledonian Rd）へチェックイン。</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- DAY 6 -->
+    <section id="day6" class="day-card theme-uk scroll-target" data-theme="uk">
+      <div class="day-header">
+        <div><span class="day-label">Day 6</span><span class="day-date" data-ja="5月4日(火・祝)" data-en="Tue, May 4">5月4日(火・祝)</span></div>
+        <span class="day-area" data-ja="🇬🇧 ロンドン王道観光①" data-en="🇬🇧 Classic London I">🇬🇧 ロンドン王道観光①</span>
+      </div>
+      <div class="day-body">
+        <ul class="timeline">
+          <li class="timeline-item">
+            <span class="timeline-dot"></span>
+            <span class="time-badge">09:00</span>
+            <div class="event-title">
+              <span data-ja="ビッグ・ベン（エリザベス・タワー）" data-en="Big Ben (Elizabeth Tower)">ビッグ・ベン（エリザベス・タワー）</span>
+              <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Big+Ben+London" target="_blank" rel="noopener">📍 Map</a>
+            </div>
+            <p class="event-desc" data-ja="ウェストミンスター橋からの絶景フォトスポット。" data-en="Iconic views from Westminster Bridge.">ウェストミンスター橋からの絶景フォトスポット。</p>
+          </li>
+          <li class="timeline-item">
+            <span class="timeline-dot"></span>
+            <span class="time-badge">10:00</span>
+            <div class="event-title">
+              <span data-ja="ウェストミンスター寺院" data-en="Westminster Abbey">ウェストミンスター寺院</span>
+              <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Westminster+Abbey+London" target="_blank" rel="noopener">📍 Map</a>
+            </div>
+            <p class="event-desc" data-ja="歴代英国王の戴冠式が行われるゴシック建築の傑作（※事前予約推奨）。" data-en="Historic coronation church and Gothic masterpiece (advance booking recommended).">歴代英国王の戴冠式が行われるゴシック建築の傑作（※事前予約推奨）。</p>
+          </li>
+          <li class="timeline-item">
+            <span class="timeline-dot"></span>
+            <span class="time-badge">12:00</span>
+            <div class="event-title">
+              <span data-ja="バッキンガム宮殿" data-en="Buckingham Palace">バッキンガム宮殿</span>
+              <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Buckingham+Palace+London" target="_blank" rel="noopener">📍 Map</a>
+            </div>
+            <p class="event-desc" data-ja="セント・ジェームズ・パークを抜けて宮殿前へ。" data-en="Stroll through St. James's Park to the Palace.">セント・ジェームズ・パークを抜けて宮殿前へ。</p>
+          </li>
+          <li class="timeline-item">
+            <span class="timeline-dot"></span>
+            <span class="time-badge">14:00</span>
+            <div class="event-title">
+              <span data-ja="ナショナル・ギャラリー" data-en="The National Gallery">ナショナル・ギャラリー</span>
+              <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=The+National+Gallery+London" target="_blank" rel="noopener">📍 Map</a>
+            </div>
+            <p class="event-desc" data-ja="トラファルガー広場に面した国立美術館。ゴッホ『ひまわり』など名画を鑑賞。" data-en="Masterpieces on Trafalgar Square including Van Gogh's Sunflowers.">トラファルガー広場に面した国立美術館。ゴッホ『ひまわり』など名画を鑑賞。</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- DAY 7 -->
+    <section id="day7" class="day-card theme-uk scroll-target" data-theme="uk">
+      <div class="day-header">
+        <div><span class="day-label">Day 7</span><span class="day-date" data-ja="5月5日(水・祝)" data-en="Wed, May 5">5月5日(水・祝)</span></div>
+        <span class="day-area" data-ja="🇬🇧 ロンドン観光②" data-en="🇬🇧 London Sightseeing II">🇬🇧 ロンドン観光②</span>
+      </div>
+      <div class="day-body">
+        <ul class="timeline">
+          <li class="timeline-item">
+            <span class="timeline-dot"></span>
+            <span class="time-badge">09:00</span>
+            <div class="event-title">
+              <span data-ja="大英博物館（British Museum）" data-en="The British Museum">大英博物館（British Museum）</span>
+              <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=The+British+Museum+London" target="_blank" rel="noopener">📍 Map</a>
+            </div>
+            <p class="event-desc" data-ja="ロゼッタ・ストーン、パルテノン神殿彫刻、エジプトコレクションなど（※無料時間指定予約推奨）。" data-en="Rosetta Stone, Parthenon sculptures, and Egyptian galleries (free timed-entry booking recommended).">ロゼッタ・ストーン、パルテノン神殿彫刻、エジプトコレクションなど（※無料時間指定予約推奨）。</p>
+          </li>
+          <li class="timeline-item">
+            <span class="timeline-dot"></span>
+            <span class="time-badge">12:00</span>
+            <div class="event-title">
+              <span data-ja="バラ・マーケット（Borough Market）" data-en="Borough Market">バラ・マーケット（Borough Market）</span>
+              <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Borough+Market+London" target="_blank" rel="noopener">📍 Map</a>
+            </div>
+            <p class="event-desc" data-ja="ロンドン最古の食品市場でランチ＆食べ歩き。" data-en="Lunch and street food tasting at London's historic food market.">ロンドン最古の食品市場でランチ＆食べ歩き。</p>
+          </li>
+          <li class="timeline-item">
+            <span class="timeline-dot"></span>
+            <span class="time-badge">14:00</span>
+            <div class="event-title">
+              <span data-ja="タワーブリッジ ＆ ロンドン・アイ ＆ ショップ巡り" data-en="Tower Bridge, London Eye &amp; Shopping">タワーブリッジ ＆ ロンドン・アイ ＆ ショップ巡り</span>
+              <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Tower+Bridge+London" target="_blank" rel="noopener" data-ja="📍 タワーブリッジ" data-en="📍 Tower Bridge">📍 タワーブリッジ</a>
+              <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=London+Eye" target="_blank" rel="noopener" data-ja="📍 ロンドン・アイ" data-en="📍 London Eye">📍 ロンドン・アイ</a>
+            </div>
+            <p class="event-desc" data-ja="テムズ川沿いのランドマーク散策とショッピング。" data-en="Riverside landmarks along the Thames and afternoon shopping.">テムズ川沿いのランドマーク散策とショッピング。</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- DAY 8 -->
+    <section id="day8" class="day-card theme-uk scroll-target" data-theme="uk">
+      <div class="day-header">
+        <div><span class="day-label">Day 8</span><span class="day-date" data-ja="5月6日(木)" data-en="Thu, May 6">5月6日(木)</span></div>
+        <span class="day-area" data-ja="🇬🇧 ロンドン観光③" data-en="🇬🇧 London Sightseeing III">🇬🇧 ロンドン観光③</span>
+      </div>
+      <div class="day-body">
+        <ul class="timeline">
+          <li class="timeline-item">
+            <span class="timeline-dot"></span>
+            <span class="time-badge">09:00</span>
+            <div class="event-title">
+              <span data-ja="アビー・ロード（Abbey Road）" data-en="Abbey Road Crossing">アビー・ロード（Abbey Road）</span>
+              <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Abbey+Road+Crosswalk+London" target="_blank" rel="noopener">📍 Map</a>
+            </div>
+            <p class="event-desc" data-ja="ビートルズのジャケット写真で有名な横断歩道へ（交通量に注意して撮影）。" data-en="Famous Beatles zebra crossing (watch carefully for active traffic when taking photos).">ビートルズのジャケット写真で有名な横断歩道へ（交通量に注意して撮影）。</p>
+          </li>
+          <li class="timeline-item">
+            <span class="timeline-dot"></span>
+            <span class="time-badge">11:00</span>
+            <div class="event-title">
+              <span data-ja="ノッティング・ヒル ＆ ハイド・パーク" data-en="Notting Hill &amp; Hyde Park">ノッティング・ヒル ＆ ハイド・パーク</span>
+              <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Notting+Hill+London" target="_blank" rel="noopener" data-ja="📍 ノッティング・ヒル" data-en="📍 Notting Hill">📍 ノッティング・ヒル</a>
+              <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Hyde+Park+London" target="_blank" rel="noopener" data-ja="📍 ハイド・パーク" data-en="📍 Hyde Park">📍 ハイド・パーク</a>
+            </div>
+            <p class="event-desc" data-ja="カラフルな街並み散策と王立公園でのリラックスタイム。" data-en="Colorful townhouses and a relaxing stroll through the Royal Park.">カラフルな街並み散策と王立公園でのリラックスタイム。</p>
+          </li>
+          <li class="timeline-item">
+            <span class="timeline-dot"></span>
+            <span class="time-badge">13:00</span>
+            <div class="event-title">
+              <span data-ja="ヴィクトリア＆アルバート博物館（V&amp;A）" data-en="Victoria and Albert Museum (V&amp;A)">ヴィクトリア＆アルバート博物館（V&amp;A）</span>
+              <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Victoria+and+Albert+Museum+London" target="_blank" rel="noopener">📍 Map</a>
+            </div>
+            <p class="event-desc" data-ja="世界最大級の工芸・デザイン博物館とセンス抜群のミュージアムショップ。" data-en="World-leading museum of decorative arts &amp; design and its renowned museum shop.">世界最大級の工芸・デザイン博物館とセンス抜群のミュージアムショップ。</p>
+          </li>
+          <li class="timeline-item">
+            <span class="timeline-dot"></span>
+            <span class="time-badge">15:00</span>
+            <div class="event-title">
+              <span data-ja="テート・モダン（Tate Modern）" data-en="Tate Modern">テート・モダン（Tate Modern）</span>
+              <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Tate+Modern+London" target="_blank" rel="noopener">📍 Map</a>
+            </div>
+            <p class="event-desc" data-ja="旧発電所を改装した現代美術館。展望フロアからの眺めも必見。" data-en="Modern art museum in a former power station with great Thames views.">旧発電所を改装した現代美術館。展望フロアからの眺めも必見。</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- DAY 9 -->
+    <section id="day9" class="day-card theme-uk scroll-target" data-theme="uk">
+      <div class="day-header">
+        <div><span class="day-label">Day 9</span><span class="day-date" data-ja="5月7日(金)" data-en="Fri, May 7">5月7日(金)</span></div>
+        <span class="day-area" data-ja="🇬🇧 ロンドン → 🇸🇬 シンガポール" data-en="🇬🇧 London → 🇸🇬 Singapore">🇬🇧 ロンドン → 🇸🇬 シンガポール</span>
+      </div>
+      <div class="day-body">
+        <ul class="timeline">
+          <li class="timeline-item">
+            <span class="timeline-dot"></span>
+            <span class="time-badge">06:00</span>
+            <div class="event-title">
+              <span data-ja="ロンドンの宿 チェックアウト → ガトウィック空港へ" data-en="Check out → Transfer to Gatwick Airport">ロンドンの宿 チェックアウト → ガトウィック空港へ</span>
+              <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=London+Gatwick+Airport+North+Terminal" target="_blank" rel="noopener" data-ja="📍 ガトウィック空港 N" data-en="📍 Gatwick North">📍 ガトウィック空港 N</a>
+            </div>
+            <p class="event-desc" data-ja="セント・パンクラス駅から直通列車（Thameslink）等でガトウィック空港 North Terminal へ。" data-en="Take a direct Thameslink train from St Pancras to Gatwick Airport North Terminal.">セント・パンクラス駅から直通列車（Thameslink）等でガトウィック空港 North Terminal へ。</p>
+          </li>
+          <li class="timeline-item">
+            <span class="timeline-dot"></span>
+            <span class="time-badge" data-ja="10:10 発 → 翌06:25 着" data-en="Dep 10:10 → Arr 06:25 (+1)">10:10 発 → 翌06:25 着</span>
+            <div class="ticket-box">
+              <div class="ticket-head">
+                <span>✈️ SINGAPORE AIRLINES | SQ 309</span>
+                <span data-ja="受託手荷物 25kgまで" data-en="Checked Baggage: 25 kg">受託手荷物 25kgまで</span>
+              </div>
+              <div class="ticket-route">
+                <span data-ja="ロンドン LGW (North)" data-en="London LGW (North)">ロンドン LGW (North)</span>
+                <span class="arrow">──────▶</span>
+                <span data-ja="シンガポール SIN (T3)" data-en="Singapore SIN (T3)">シンガポール SIN (T3)</span>
+              </div>
+              <div class="ticket-sub">
+                <span data-ja="到着は翌5月8日(土) 06:25（機内泊）" data-en="Arrives Sat, May 8 at 06:25 (overnight flight)">到着は翌5月8日(土) 06:25（機内泊）</span>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- DAY 10 -->
+    <section id="day10" class="day-card theme-jp scroll-target" data-theme="jp">
+      <div class="day-header">
+        <div><span class="day-label">Day 10</span><span class="day-date" data-ja="5月8日(土)" data-en="Sat, May 8">5月8日(土)</span></div>
+        <span class="day-area" data-ja="🇸🇬 シンガポール → 🇯🇵 羽田 → 名古屋" data-en="🇸🇬 Singapore → 🇯🇵 Haneda → Nagoya">🇸🇬 シンガポール → 🇯🇵 羽田 → 名古屋</span>
+      </div>
+      <div class="day-body">
+        <ul class="timeline">
+          <li class="timeline-item">
+            <span class="timeline-dot"></span>
+            <span class="time-badge" data-ja="06:25 着 → 07:40 発" data-en="Arr 06:25 → Dep 07:40">06:25 着 → 07:40 発</span>
+            <div class="event-title" data-ja="チャンギ空港 乗り継ぎ（T3 → T2へ移動）" data-en="Changi Transit (Terminal 3 → Terminal 2)">チャンギ空港 乗り継ぎ（T3 → T2へ移動）</div>
+            <p class="event-desc" data-ja="乗り継ぎ時間は1時間15分。到着後すぐにスカイトレイン等で Terminal 2 搭乗ゲートへ移動。" data-en="1h 15m connection. Head directly via Skytrain to Terminal 2 boarding gate upon arrival.">乗り継ぎ時間は1時間15分。到着後すぐにスカイトレイン等で Terminal 2 搭乗ゲートへ移動。</p>
+          </li>
+          <li class="timeline-item">
+            <span class="timeline-dot"></span>
+            <span class="time-badge" data-ja="07:40 発 → 15:45 着" data-en="Dep 07:40 → Arr 15:45">07:40 発 → 15:45 着</span>
+            <div class="ticket-box">
+              <div class="ticket-head">
+                <span>✈️ SINGAPORE AIRLINES | SQ 632</span>
+                <span data-ja="受託手荷物 25kgまで" data-en="Checked Baggage: 25 kg">受託手荷物 25kgまで</span>
+              </div>
+              <div class="ticket-route">
+                <span data-ja="シンガポール SIN (T2)" data-en="Singapore SIN (T2)">シンガポール SIN (T2)</span>
+                <span class="arrow">──────▶</span>
+                <span data-ja="東京・羽田 HND (T3)" data-en="Tokyo Haneda HND (T3)">東京・羽田 HND (T3)</span>
+              </div>
+              <div class="ticket-sub">
+                <span data-ja="羽田空港 第3ターミナル到着" data-en="Arriving at Haneda Terminal 3">羽田空港 第3ターミナル到着</span>
+              </div>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <span class="timeline-dot"></span>
+            <span class="time-badge">17:00 → 19:00 → 20:00</span>
+            <div class="event-title">
+              <span data-ja="品川駅 → 新幹線で名古屋駅 → 自宅到着" data-en="Shinagawa Sta. → Shinkansen to Nagoya → Home">品川駅 → 新幹線で名古屋駅 → 自宅到着</span>
+              <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Shinagawa+Station" target="_blank" rel="noopener" data-ja="📍 品川駅" data-en="📍 Shinagawa">📍 品川駅</a>
+              <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Nagoya+Station" target="_blank" rel="noopener" data-ja="📍 名古屋駅" data-en="📍 Nagoya">📍 名古屋駅</a>
+            </div>
+            <p class="event-desc" data-ja="京急線で品川駅へ移動し、東海道新幹線で名古屋へ帰着。" data-en="Take the Keikyu Line to Shinagawa and board the Tokaido Shinkansen to Nagoya.">京急線で品川駅へ移動し、東海道新幹線で名古屋へ帰着。</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Practical Tips -->
+    <section id="tips" class="scroll-target" data-theme="uk">
+      <h2 class="section-title" data-ja="💡 現地お役立ちメモ・注意事項" data-en="💡 Local Travel Tips &amp; Reminders">💡 現地お役立ちメモ・注意事項</h2>
+
+      <details class="info-card" open>
+        <summary data-ja="🚄 ユーロスター乗車の重要ルール（5/3）" data-en="🚄 Eurostar Boarding Rules (May 3)">🚄 ユーロスター乗車の重要ルール（5/3）</summary>
+        <div class="info-content">
+          <ul>
+            <li data-ja="改札閉鎖：出発時刻（15:02）の30分前（14:32）にゲートが閉まります。必ず1時間前（14:02）までにパリ北駅へ到着してください。" data-en="Gate Closure: Ticket gates close strictly 30 minutes before departure (14:32). Arrive at Gare du Nord by 14:02.">改札閉鎖：出発時刻（15:02）の30分前（14:32）にゲートが閉まります。必ず1時間前（14:02）までにパリ北駅へ到着してください。</li>
+            <li data-ja="国境審査：パリ北駅構内でフランスの出国審査とイギリスの入国審査を連続して行います。" data-en="Border Checks: Both French exit and UK entry border checks take place at Paris Gare du Nord before boarding.">国境審査：パリ北駅構内でフランスの出国審査とイギリスの入国審査を連続して行います。</li>
+            <li data-ja="荷物制限：1人あたり大型スーツケース2個（長辺85cm以内）＋小型手荷物1個まで。" data-en="Luggage Allowance: Up to 2 large bags (max 85cm) + 1 small hand luggage per passenger.">荷物制限：1人あたり大型スーツケース2個（長辺85cm以内）＋小型手荷物1個まで。</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="info-card">
+        <summary data-ja="🚇 現地交通・決済のポイント（パリ／ロンドン）" data-en="🚇 Local Transit &amp; Payment (Paris / London)">🚇 現地交通・決済のポイント（パリ／ロンドン）</summary>
+        <div class="info-content">
+          <ul>
+            <li data-ja="ロンドン交通（Tube / バス）：切符購入は不要。タッチ決済対応のクレジットカードまたはApple Payを改札にタッチするだけで乗車できます（1人1枚のカード/端末が必要）。" data-en="London Transit (Tube / Bus): No paper tickets needed—tap a contactless card or Apple Pay directly at the gates (1 card/device per person).">ロンドン交通（Tube / バス）：切符購入は不要。タッチ決済対応のクレジットカードまたはApple Payを改札にタッチするだけで乗車できます（1人1枚のカード/端末が必要）。</li>
+            <li data-ja="パリ交通（メトロ / RER）：iPhoneのエクスプレスカード（Navigo）または駅の券売機でNavigo Easyを購入するとスムーズです。" data-en="Paris Transit (Métro / RER): Use Navigo on Apple Wallet or purchase a rechargeable Navigo Easy card at station machines.">パリ交通（メトロ / RER）：iPhoneのエクスプレスカード（Navigo）または駅の券売機でNavigo Easyを購入するとスムーズです。</li>
+            <li data-ja="防犯対策：観光地や地下鉄車内ではスマホのながら歩きを避け、バッグは体の前側で持ちましょう。" data-en="Safety: Keep bags zipped in front of you in crowded areas and avoid using smartphones near train doors.">防犯対策：観光地や地下鉄車内ではスマホのながら歩きを避け、バッグは体の前側で持ちましょう。</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="info-card">
+        <summary data-ja="🔌 電源プラグ・通貨チェック" data-en="🔌 Power Plugs &amp; Currencies">🔌 電源プラグ・通貨チェック</summary>
+        <div class="info-content">
+          <ul>
+            <li data-ja="コンセント形状：フランス＝Cタイプ（丸ピン2本）／イギリス・シンガポール＝BFタイプ（角ピン3本）。" data-en="Power Outlets: France = Type C (2 round pins) / UK &amp; Singapore = Type G (3 rectangular pins).">コンセント形状：フランス＝Cタイプ（丸ピン2本）／イギリス・シンガポール＝BFタイプ（角ピン3本）。</li>
+            <li data-ja="通貨：フランス＝ユーロ（EUR）／イギリス＝英ポンド（GBP）／シンガポール＝シンガポールドル（SGD）。ほぼ全行程カード決済可能です。" data-en="Currencies: France = EUR / UK = GBP / Singapore = SGD. Contactless cards are widely accepted everywhere.">通貨：フランス＝ユーロ（EUR）／イギリス＝英ポンド（GBP）／シンガポール＝シンガポールドル（SGD）。ほぼ全行程カード決済可能です。</li>
+          </ul>
+        </div>
+      </details>
+    </section>
+
+  </main>
+
+  <button class="fab-top" type="button" onclick="window.scrollTo({top:0, behavior:'smooth'})" aria-label="ページ上部へ戻る">↑ TOP</button>
+  <div class="toast" id="toast" role="status" aria-live="polite">住所をコピーしました</div>
+
+  <script>
+    let currentLang = 'ja';
+    let currentThemeKey = 'jp';
+
+    const themes = {
+      jp:  { main: '#8c3b3b', ja: '🇯🇵 JAPAN / 移動・出発', en: '🇯🇵 JAPAN / Departure & Return' },
+      sg:  { main: '#2d6360', ja: '🇸🇬 SINGAPORE / トランジット', en: '🇸🇬 SINGAPORE / Transit' },
+      fr:  { main: '#334e68', ja: '🇫🇷 FRANCE / パリ滞在', en: '🇫🇷 FRANCE / Paris Stay' },
+      mix: { main: '#873e43', ja: '🇫🇷 PARIS → 🇬🇧 LONDON 移動日', en: '🇫🇷 PARIS → 🇬🇧 LONDON Transfer' },
+      uk:  { main: '#223348', ja: '🇬🇧 UNITED KINGDOM / ロンドン滞在', en: '🇬🇧 UNITED KINGDOM / London Stay' }
+    };
+
+    const countryLabel = document.getElementById('current-country-label');
+
+    function setLang(lang) {
+      currentLang = lang;
+      document.documentElement.lang = lang;
+
+      // Update toggle active states
+      document.querySelectorAll('[data-set-lang]').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.setLang === lang);
+      });
+
+      // Swap all bilingual text elements
+      document.querySelectorAll('[data-ja][data-en]').forEach(el => {
+        el.textContent = el.dataset[lang];
+      });
+
+      // Update dynamic country label
+      applyTheme(currentThemeKey);
+
+      try {
+        localStorage.setItem('shiori_lang', lang);
+      } catch (e) {}
+    }
+
+    function applyTheme(themeKey) {
+      currentThemeKey = themeKey || 'jp';
+      const t = themes[currentThemeKey] || themes.jp;
+      document.documentElement.style.setProperty('--theme-main', t.main);
+      countryLabel.textContent = t[currentLang] || t.ja;
+    }
+
+    function copyText(text) {
+      const msg = currentLang === 'en' ? 'Address copied' : '住所をコピーしました';
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(() => showToast(msg));
+      } else {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        showToast(msg);
+      }
+    }
+
+    let toastTimer;
+    function showToast(msg) {
+      const el = document.getElementById('toast');
+      el.textContent = msg;
+      el.classList.add('show');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => el.classList.remove('show'), 2200);
+    }
+
+    // ScrollSpy Observer
+    const navPills = document.querySelectorAll('.nav-pill');
+    const sections = document.querySelectorAll('.scroll-target');
+    const navScroll = document.getElementById('nav-scroll');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          applyTheme(entry.target.dataset.theme);
+
+          navPills.forEach(pill => {
+            const isActive = pill.dataset.target === id;
+            pill.classList.toggle('active', isActive);
+            if (isActive) {
+              const offsetLeft = pill.offsetLeft - (navScroll.clientWidth / 2) + (pill.clientWidth / 2);
+              navScroll.scrollTo({ left: offsetLeft, behavior: 'smooth' });
+            }
+          });
+        }
+      });
+    }, {
+      rootMargin: '-18% 0px -68% 0px',
+      threshold: 0
+    });
+
+    sections.forEach(sec => observer.observe(sec));
+
+    // Restore saved language preference
+    try {
+      const savedLang = localStorage.getItem('shiori_lang');
+      if (savedLang === 'en' || savedLang === 'ja') {
+        setLang(savedLang);
+      }
+    } catch (e) {}
+  </script>
+</body>
+</html>
